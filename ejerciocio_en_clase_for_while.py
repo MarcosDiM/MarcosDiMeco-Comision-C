@@ -1,5 +1,5 @@
 # FOR
-'''
+
 letras = letra = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","ñ","o","p","q","r","s","t","u","v","w","x","y","z"]
 
 lugares = int(input("Ingresa cauntos lugares se correran las letras: "))
@@ -11,7 +11,7 @@ for i in range(5):
         nueva_letra = (lugares + posicion)%27
         mensaje_encriptado = mensaje_encriptado + letras[nueva_letra]
     print(mensaje_encriptado)
-'''
+
 #WHILE
 
 numero = input("Ingresar un numero ")
