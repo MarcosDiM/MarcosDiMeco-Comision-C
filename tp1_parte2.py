@@ -5,7 +5,8 @@
 base= int(input("Ingresar base de rectangulo: "))
 altura= int(input("Ingresar la altura del rectangulo: "))
 area = base * altura 
-print("El area del rectangulo es de: ", area)
+perimetro = (base + altura)*2
+print("El area del rectangulo es de: ", area, "- El perimetro es: ", perimetro)
 
 #2.	Dados los catetos de un triángulo rectángulo, calcular su hipotenusa.
 
@@ -65,9 +66,10 @@ media = (num1 + num2 + num3)/3
 print("La media es igual a: ", media)
 
 #7.	Realiza un programa que reciba una cantidad de minutos y muestre por pantalla a cuantas horas y minutos corresponde.
-minutos =  int(input("Ingresar minutos: "))
-horas = minutos / 60
-print(minutos, "son igual a: ",horas," horas")
+minutos_totales =  int(input("Ingresar minutos: "))
+horas = int(minutos_totales / 60)
+minutos = minutos_totales % 60
+print(f"{minutos_totales} son igual a: {horas} horas y {minutos} minutos")
 
 #8. Sueldo y comisiones
 sueldo = int(input("Sueldo: "))
@@ -93,7 +95,7 @@ print("El promedio final es: ", promedio_final)
 #11. Pide al usuario dos números y muestra la “distancia” entre ellos.
 numero1 = abs(input("Ingresar numero 1: "))
 numero2 = abs(input("Ingresar numero 2: "))
-distancia= numero1 - numero2
+distancia= abs(numero1) - abs(numero2)
 print("La distancia entre ellos es: ", distancia)
 
 #12. Realizar un algoritmo que lea un número y que muestre su raíz cuadrada y su raíz cúbica.

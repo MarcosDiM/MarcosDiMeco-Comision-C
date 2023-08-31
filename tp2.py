@@ -1,5 +1,5 @@
 #TRABAJO PRACTICO N2
-'''
+
 #1-	Crear un programa que reciba el número de años que tiene nuestra computadora y muestre en la consola que el computador es nuevo si es menor o igual a 2 años y que el computador es viejo si es mayor a 2 años.
 
 anios_computadora = int(input("Ingresar cuantos años tine esta computadora: "))
@@ -162,7 +162,7 @@ elif numero2 > numero1:
 elif numero1 == numero2: 
     print("Los numeros ingresados son los mismos")
 
-'''
+
 #14- Escriba un programa que pida los coeficientes de una ecuación de primer grado (a x + b = 0) y escriba la solución.
 
 print("Ecuacion: (a x + b = 0)")
@@ -196,3 +196,77 @@ elif t_o_r =="c":
     print(f"El area del circulo es de {area}cm²")
 else: 
     print("VALOR INGRESADO NO VALIDO")
+
+#16-	Haz una calculadora básica pida al usuario dos valores, a y b. Según la opción que desean, realizar la operación
+
+num1 = int(input("Ingresar un numero: "))
+num2 = int(input("Ingresar otro numero: "))
+operacion = int(input("Ingresar que operacion desea realizar (1/2/3/4): "))
+
+if operacion == 1: 
+    res_operacion = num1 + num2
+    print("El resultado de la operacion es:", res_operacion)
+elif operacion == 2: 
+    res_operacion = num1 - num2
+    print("El resultado de la operacion es:", res_operacion)
+elif operacion == 3:
+    res_operacion = num1 * num2
+    print("El resultado de la operacion es:", res_operacion)
+elif operacion == 4: 
+    res_operacion = num1 / num2
+    print("El resultado de la operacion es:", res_operacion)
+else: 
+    print("Operacion ingresada no valida")
+
+#17- Requerir al usuario que ingrese un día de la semana e imprimir un mensaje si es lunes, otro mensaje diferente si es viernes, otro mensaje diferente si es sábado o domingo. Si el día ingresado no es ninguno de esos, imprimir otro mensaje.
+dia_semana = str(input("Ingresar un dia de la semana: ")).lower()
+
+if dia_semana == "lunes":
+    print("Esta comenzando la semana")
+elif dia_semana == "viernes":
+    print("Hoy empieza el fin de semana")
+elif dia_semana == "sabado" or dia_semana == "domingo":
+    print("Es fin de semana")
+else:
+    print("Es mitad de semana")
+
+#18- Preguntar al usuario el total de horas trabajadas en el mes y el salario por hora.Mostrar su salario total, tomando en cuenta que las horas extras serán pagadas un 10% más que las horas laborales comunes.
+
+horas_trabajadas = int(input("Ingresar el horas trabajadas: "))
+salario = int(input("Ingresar salario por hora: "))
+salario_extra = (horas_trabajadas % 48)*salario*0.1
+
+
+if horas_trabajadas <= 48: 
+    salario_total = salario * horas_trabajadas
+elif horas_trabajadas > 48:
+    salario_total = (salario * horas_trabajadas) + salario_extra
+
+print("El salario total es de: ", salario_total)
+
+#19- Determinar cuánto se debe pagar por una cantidad de lápices considerando que si son 1000 o más, existe un descuento de 7% y teniendo en cuenta que el costo por lápiz es de $60; de lo contrario no hay descuento.
+
+cant_lapices = int(input("Ingresar cuantos lapices quiere comprar: "))
+
+precio_lapiz = 60
+
+if cant_lapices >= 1000 : 
+    precio_total = (precio_lapiz * cant_lapices) * 0.93
+else: 
+    precio_total = precio_lapiz * cant_lapices
+
+print(f"El precio por {cant_lapices} es de: {precio_total}")
+
+#20- Determinar si un alumno aprueba o reprueba un curso, sabiendo que aprobara si su promedio de cuatro (4) notas, es mayor o igual a 6; caso contrario saldrá desaprobado.
+
+nota1 = int(input("Ingresar nota 1: "))
+nota2 = int(input("Ingresar nota 2: "))
+nota3 = int(input("Ingresar nota 3: "))
+nota4 = int(input("Ingresar nota 4: "))
+
+prom = (nota1 + nota2 + nota3 + nota4) /4
+
+if prom >= 6 :
+    print("Aprobado: ",prom)
+else:
+    print("Desaprobado: ",prom)
