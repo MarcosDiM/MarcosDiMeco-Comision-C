@@ -1,4 +1,4 @@
-from funciones import hanged
+from ejercicios_extra.funciones import hanged
 
 #AHORCADO
 #Pido ingresar una palabra la cual luego sera la palabra a adivinar

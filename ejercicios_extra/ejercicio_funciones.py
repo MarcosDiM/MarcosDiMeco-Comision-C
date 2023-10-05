@@ -1,5 +1,5 @@
 #El siguiente programa debería imprimir el número 2 si se le ingresan como valores x=5, y=1 pero en su lugar imprime 5. ¿Qué hay que corregir
-from funciones import most,least
+from ejercicios_extra.funciones import most,least
 #programa principal
 x = int(input("Un numero:"))
 y = int(input("Otro numero:"))
