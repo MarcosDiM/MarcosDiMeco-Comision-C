@@ -38,12 +38,38 @@ def create_username(name, lastname, dni):
     user_name = f"{name}{len(lastname)}{dni[0:3]}" 
     return user_name
 
+#Ejercicio 4
+def is_multiple(num1,num2):
+    if num1%num2==0:
+        return True
+    else:
+        return False
+
+#Ejercicio 5
+def media_calculator(maxi,mini):
+    media=(maxi+mini)/2
+    return media
+
+#Ejercicio 6
+def enter_space (phrase):
+    new_phrase=""
+    for letter in phrase:
+        new_phrase+=letter + " "
+    return new_phrase
+
+
 #Funciones ejercicio 7
 
+#Funcion que ingresa una lista de numeros y retorna el mayor y el menor
 def number_mayor_minor(list_numbers):
+
+    #Defino el numero mayor y menor como el de la posicion 0 de la lista
     num_minor= list_numbers[0]
     num_mayor=list_numbers[0]
+
+    #Ingresa la lista a un ciclo para recorrer todos los numeros
     for i in range(len(list_numbers)):
+        #Comenzando en base al primer numero de la lista define el mayor y menor de la lista 
         if list_numbers[i] > num_mayor:
             num_mayor = list_numbers[i]
         
@@ -52,17 +78,94 @@ def number_mayor_minor(list_numbers):
     
     return num_mayor, num_minor
 
+
+#Ejericico 8
+
+import math
+def area_per_calculator(radio):
+    perimeter=radio*2
+    area=math.pi*(radio)**2
+    return(print(f"El perímetro de la circunferencia es de {perimeter}cm y el area es de {area}cm2"))
+
+
+#Ejericicio 9
+
+def login (username, password):
+    
+    if username=="usuario1" and password=="asdasd":
+        return True
+    else:
+        return False
+
+
+#Ejercicio 10
+
+def aply_discount(prices):
+    final_price=0
+    shopping_cart=float(input("Ingrese el monto total de su carrito de compra: "))
+    if shopping_cart<=0:
+        print("¡ERROR! El valor ingresado no es válido")
+        aply_discount(prices)
+    else:    
+        if shopping_cart>=2000 and shopping_cart<4000:
+            discount=(shopping_cart*prices[2000])/100
+            final_price=shopping_cart-discount
+            print(f"Por el monto de su carrito obtiene un descuento del {prices[2000]}%")
+
+        elif shopping_cart>=4000 and shopping_cart<6000:
+            discount=(shopping_cart*prices[4000])/100
+            final_price=shopping_cart-discount
+            print(f"Por el monto de su carrito obtiene un descuento del {prices[4000]}%")
+
+        elif shopping_cart>=6000:
+            discount=(shopping_cart*prices[6000])/100
+            final_price=shopping_cart-discount
+            print(f"Por el monto de su carrito obtiene un descuento del {prices[6000]}%")
+
+        else:
+            final_price=shopping_cart
+            print(f"Por el monto de su carrito no obtiene ningún descuento")
+
+        return final_price
+
+
+
+#Ejercicio 11
+
+def aply_function(func, numbers):
+    results=[]
+    
+    for num in numbers:
+        results.append(func(num))
+    
+    return results
+def multiply_by_two(num):
+    
+    return num*2
+
+
 #Funciones ejercicio 12
 
+#Funcion que ingresa una frase y transforma las palabras a un diccionario con el largo de la palabra
 def phrase_to_dictionary(phrase):
+    #Transforma la frase en una lista de las palabras
     list_phrase = []
     list_phrase = phrase.split()
     dictionary = {}
+    #Agrega al diccionario cada palabra con su largo y luego retorna el diccionario
+    for word in list_phrase:
+        dictionary[word] = len(word)
 
-#for i in range(len(list_phrase)):
+    return dictionary
 
 
+#Funciones ejercicio 13
 
+import math
 
+def calculate_module(vector):
+    x, y, z = vector
+    module = math.sqrt(x**2 + y**2 + z**2)
+    return module
 
 

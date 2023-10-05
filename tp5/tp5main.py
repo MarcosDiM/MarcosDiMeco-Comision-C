@@ -1,6 +1,5 @@
 import tp5funciones
 
-'''
 #Ejercicio 1 - Verificar DNI
 
 #Pido al usuario ingresar su DNI, cito la funcion que lo verifica y en caso que este bien imprime DNI, sino imprime "El DNI NO ES VALIDO"
@@ -11,11 +10,13 @@ if tp5funciones.verify_dni(dni) == True:
 else:
     print("DNI INGRESADO NO VALIDO")
 
+
 #Ejercicio 2 - Ultima palabra del string
 
 #El usuario debe ingresar una frase y luego cito la funcion que retorna la ultima palabra.
 phrase = str(input("Ingrese una frase: "))
 tp5funciones.last_word(phrase)
+
 
 #Ejercicio 3 - Identificador de cada socio
 
@@ -48,10 +49,35 @@ while True :
     username = tp5funciones.create_username(name_user, lastname_user, dni_user)
     break
 print(f"Su ID de usuario es: {username}")
-'''
+
+
+#Ejercicio 4
+num1=int(input("Ingrese un número entero: "))
+num2=int(input("Ingrese otro número entero: "))
+
+if tp5funciones.is_multiple(num1,num2):
+    print(f"{num1} es multiplo de {num2}")
+else:
+    print(f"{num1} no es multiplo de {num2}")
+
+
+#Ejercicio 5
+days=int(input("Ingrese la cantidad de días que quiere calcular: "))
+
+for i in range(days):
+    maxi_tem=float(input("Ingrese la temperatura máxima(en °C sin el símbolo\"°\"): "))
+    mini_tem=float(input("Ingrese la temperatura minima(en °C sin el símbolo\"°\"): "))
+    media=tp5funciones.media_calculator(maxi_tem,mini_tem)
+    print(f"La temperatura media del día {i+1} fue de {media}°")
+
+
+#Ejercicio 6
+phrase=input("Ingrese una frase: ")
+
+print(tp5funciones.enter_space(phrase))
+
 
 #Ejercicio 7 - Numero mayor y menor ingresados
-
 numbers_entered = []
 
 while True:
@@ -69,10 +95,58 @@ number_minor = results[1]
 print(f"El mayor numero ingresado es {number_major} y el menor es {number_minor}")
 
 
+#Ejericicio 8
+radio=float(input("Ingrese el valor del radio de una circunferencia (en centimetros): "))
+tp5funciones.area_per_calculator(radio)
+
+
+#Ejericicio 9
+attempt=3
+
+while attempt>0:
+    username=input("Ingrese su usuario: ")
+    password=input("Ingrese la clave: ")
+
+    if tp5funciones.login(username,password):
+        print("¡BIENVENIDO!")
+        break
+    else:
+        attempt-=1
+        print(f"Inicio de sesión fallido. Intentos restantes: {attempt}")
+
+if attempt==0:
+    print("Has agotado tus intentos")
+
+
+#Ejercicio 10
+prices={2000:10, 4000:20, 6000:30}
+
+print(f"El precio final de su carrito es de {tp5funciones.aply_discount(prices)}")
+
+
+#Ejercicio 11
+numbers=[2,6,10,43,84]
+
+results=tp5funciones.aply_function(tp5funciones.multiply_by_two, numbers)
+
+for i in range(len(numbers)):
+    print(f"{numbers[i]} multiplicado por 2 es igual a {results[i]}")
+
+
+
 #Ejercicio 12 - Diccionario de una frase ingresada
 
-while True:
-    phrase_entered = str(int("Ingrese una frase y sus palabras seran agregadas al diccionario"))
-    if phrase_entered == "":
-        break
-    
+phrase_entered = str(input("Ingrese una frase y sus palabras seran agregadas al diccionario: "))
+
+dictionary_phrase = tp5funciones.phrase_to_dictionary(phrase_entered)
+
+print(dictionary_phrase)
+
+
+#Ejercicio 13
+
+vector = (3, 4, 5)
+
+module = tp5funciones.calculate_module(vector)
+
+print("El módulo del vector es:", module)

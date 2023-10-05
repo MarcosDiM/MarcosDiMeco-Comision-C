@@ -22,7 +22,7 @@ if options == 1:
             print("No se ha ingresado ningun numero.")
             continue
         
-        number = int(number)
+        number = float(number)
         if number == 0:
             break
         #En caso de ingresar un numero impar se suma a la variable de contador de impares y otro contador para la cantidad de impares
