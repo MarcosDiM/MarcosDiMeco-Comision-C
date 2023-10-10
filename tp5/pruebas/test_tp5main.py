@@ -1,11 +1,11 @@
-import tp5funciones
+import test_tp5funciones
 
 #Ejercicio 1 - Verificar DNI
 
 #Pido al usuario ingresar su DNI, cito la funcion que lo verifica y en caso que este bien imprime DNI, sino imprime "El DNI NO ES VALIDO"
 dni = input("Ingrese su DNI: ")
 
-if tp5funciones.verify_dni(dni) == True:
+if test_tp5funciones.verify_dni(dni) == True:
     print("DNI: ", dni)
 else:
     print("DNI INGRESADO NO VALIDO")
@@ -15,7 +15,7 @@ else:
 
 #El usuario debe ingresar una frase y luego cito la funcion que retorna la ultima palabra.
 phrase = str(input("Ingrese una frase: "))
-tp5funciones.last_word(phrase)
+test_tp5funciones.last_word(phrase)
 
 
 #Ejercicio 3 - Identificador de cada socio
@@ -38,15 +38,15 @@ while True :
         continue
 
     #Ingresa la lista en una funcion la cual la define nombre apellido y dni en variables distintas
-    name_user, lastname_user, dni_user = tp5funciones.define_name(list_user)
+    name_user, lastname_user, dni_user = test_tp5funciones.define_name(list_user)
 
     #Verifica el dni, si no es valido vuelve a comenzar el ciclo
-    if tp5funciones.verify_dni(dni_user) == False :
+    if test_tp5funciones.verify_dni(dni_user) == False :
         print("DNI INGRESADO NO VALIDO, VUELVA A INGRESAR EL USUARIO")
         continue
     
     #Define el username o ID del usuario mediante una funcion y termina el ciclo
-    username = tp5funciones.create_username(name_user, lastname_user, dni_user)
+    username = test_tp5funciones.create_username(name_user, lastname_user, dni_user)
     break
 print(f"Su ID de usuario es: {username}")
 
@@ -55,7 +55,7 @@ print(f"Su ID de usuario es: {username}")
 num1=int(input("Ingrese un número entero: "))
 num2=int(input("Ingrese otro número entero: "))
 
-if tp5funciones.is_multiple(num1,num2):
+if test_tp5funciones.is_multiple(num1,num2):
     print(f"{num1} es multiplo de {num2}")
 else:
     print(f"{num1} no es multiplo de {num2}")
@@ -67,14 +67,14 @@ days=int(input("Ingrese la cantidad de días que quiere calcular: "))
 for i in range(days):
     maxi_tem=float(input("Ingrese la temperatura máxima(en °C sin el símbolo\"°\"): "))
     mini_tem=float(input("Ingrese la temperatura minima(en °C sin el símbolo\"°\"): "))
-    media=tp5funciones.media_calculator(maxi_tem,mini_tem)
+    media=test_tp5funciones.media_calculator(maxi_tem,mini_tem)
     print(f"La temperatura media del día {i+1} fue de {media}°")
 
 
 #Ejercicio 6
 phrase=input("Ingrese una frase: ")
 
-print(tp5funciones.enter_space(phrase))
+print(test_tp5funciones.enter_space(phrase))
 
 
 #Ejercicio 7 - Numero mayor y menor ingresados
@@ -88,7 +88,7 @@ while True:
         numbers_entered.append(entered_num)
         continue
 
-results= tp5funciones.number_mayor_minor(numbers_entered) 
+results= test_tp5funciones.number_mayor_minor(numbers_entered) 
 number_major = results[0]
 number_minor = results[1]
 
@@ -97,7 +97,7 @@ print(f"El mayor numero ingresado es {number_major} y el menor es {number_minor}
 
 #Ejericicio 8
 radio=float(input("Ingrese el valor del radio de una circunferencia (en centimetros): "))
-tp5funciones.area_per_calculator(radio)
+test_tp5funciones.area_per_calculator(radio)
 
 
 #Ejericicio 9
@@ -107,7 +107,7 @@ while attempt>0:
     username=input("Ingrese su usuario: ")
     password=input("Ingrese la clave: ")
 
-    if tp5funciones.login(username,password):
+    if test_tp5funciones.login(username,password):
         print("¡BIENVENIDO!")
         break
     else:
@@ -121,13 +121,13 @@ if attempt==0:
 #Ejercicio 10
 prices={2000:10, 4000:20, 6000:30}
 
-print(f"El precio final de su carrito es de {tp5funciones.aply_discount(prices)}")
+print(f"El precio final de su carrito es de {test_tp5funciones.aply_discount(prices)}")
 
 
 #Ejercicio 11
 numbers=[2,6,10,43,84]
 
-results=tp5funciones.aply_function(tp5funciones.multiply_by_two, numbers)
+results=test_tp5funciones.aply_function(test_tp5funciones.multiply_by_two, numbers)
 
 for i in range(len(numbers)):
     print(f"{numbers[i]} multiplicado por 2 es igual a {results[i]}")
@@ -138,7 +138,7 @@ for i in range(len(numbers)):
 
 phrase_entered = str(input("Ingrese una frase y sus palabras seran agregadas al diccionario: "))
 
-dictionary_phrase = tp5funciones.phrase_to_dictionary(phrase_entered)
+dictionary_phrase = test_tp5funciones.phrase_to_dictionary(phrase_entered)
 
 print(dictionary_phrase)
 
@@ -147,7 +147,7 @@ print(dictionary_phrase)
 
 vector = (3, 4, 5)
 
-module = tp5funciones.calculate_module(vector)
+module = test_tp5funciones.calculate_module(vector)
 
 print("El módulo del vector es:", module)
 
@@ -155,18 +155,18 @@ print("El módulo del vector es:", module)
 #Ejercicio 14
 num=int(input("Ingrese un número: "))
 
-if tp5funciones.is_prime(num)==True:
+if test_tp5funciones.is_prime(num)==True:
     print(f"{num} es primo")
 else:
     print(f"{num} no es primo")
 
 #Ejercicio 15
 nums=[]
-tp5funciones.list_filler(nums)
+test_tp5funciones.list_filler(nums)
 
 print("Factoriales de los números ingresados: ")
 for num in nums:
-    factorial=tp5funciones.factorial_calculator(num)
+    factorial=test_tp5funciones.factorial_calculator(num)
     print(f"El factorial de {num} es {factorial}")
 
 print(f"Se leyeron {len(nums)} números en total")
@@ -175,23 +175,23 @@ print(f"Se leyeron {len(nums)} números en total")
 num=int(input("Ingrese un número: "))
 digit=int(input("Ingrese un digito: "))
 
-print(f"El número {digit} se repite {tp5funciones.frequency(num, digit)} veces en {num}")
+print(f"El número {digit} se repite {test_tp5funciones.frequency(num, digit)} veces en {num}")
 
 #Ejercicio 17
 max_num=0
 
 while True:
     num=int(input("Ingrese un número primo: "))
-    if tp5funciones.is_prime(num):
+    if test_tp5funciones.is_prime(num):
         if num>max_num:
             max_num=num
         
-        print(f"La suma de los dígitos de {num} es {tp5funciones.sum_of_digit(num)}")
+        print(f"La suma de los dígitos de {num} es {test_tp5funciones.sum_of_digit(num)}")
         digit=int(input("Ingrese un dígito: "))
-        print(f"El número {digit} se repite {tp5funciones.frequency(num, digit)} veces en {num}")
+        print(f"El número {digit} se repite {test_tp5funciones.frequency(num, digit)} veces en {num}")
     else:
         break
 
-factorial=tp5funciones.factorial_calculator(max_num)
+factorial=test_tp5funciones.factorial_calculator(max_num)
 print(f"El mayor número ingresado fue {max_num}")
 print(f"El factorial de {max_num} es {factorial}")
