@@ -1,0 +1,27 @@
+ADN Horizontal y Diagonal 
+
+ACCGTA
+ACTTTT
+ACCTGA
+CGGCAA
+GCTGCT
+ATCTCG
+
+ADN Vertical y Diagonal inversa 
+
+CGAAAG
+GACTAC
+CATGAT
+TGGTAC
+AGTCTA
+GATGAT
+
+ADN No perteneciente a mutante
+
+CAGTAG
+TAGTCA
+CTGCTA
+ACGTAT
+CAGACT
+CAGATA
+
