@@ -4,7 +4,12 @@ def complete_matrix_adn(matrix_dna):
     print("Ingresar 6 lineas de 6 elementos de ADN (A/T/C/G)")
     #Incio un ciclo while para el ingreso de las lineas de adn
     while True:   
-        dna = str(input(f"Ingresar linea {rows+1}: ")).upper()
+        try:
+            dna = str(input(f"Ingresar linea {rows+1}: ")).upper()
+        except ValueError:
+            print("Valor ingresado no valido")
+            continue
+
         # Condicion para verificar que la linea ingresada sea de 6 digitos
         if len(dna) != 6:
             print("Linea de ADN no valido, vuelva a ingresar la linea.")
@@ -30,4 +35,26 @@ def complete_matrix_adn(matrix_dna):
     return matrix_dna
 
 def is_mutant(dna):
-    return 
+    for i in range(6):
+        print("\n")
+        for j in range(6):
+            print(dna[i][j],end="")
+    counter_dna = 0
+    positions = []
+    for i in range(6):
+        for j in range(6):
+            if (j + 3 < 7) and dna[i][j] == dna[i][j+1]:
+                if dna[i][j] == dna[i][j+2] and dna[i][j] == dna[i][j+3] and dna[i][j] == dna[i][j+4]:
+                    counter_dna += 1
+            if (i + 3 < 7) and dna[i][j] == dna[i+1][j]: 
+                if dna[i][j] == dna[i+2][j] and dna[i][j] == dna[i+3][j] and dna[i][j] == dna[i+4][j]:
+                    counter_dna += 1
+            if (i + 3 < 7) and (j + 3 < 7) and dna[i][j] == dna[i+1][j+1]:
+                if dna[i][j] == dna[i+2][j+2] and dna[i][j] == dna[i+3][j+3] and dna[i][j] == dna[i+4][j+4]:
+                    counter_dna += 1
+
+    print("Contador: ", counter_dna)
+    if counter_dna > 1:
+        return True
+    else:
+        return False
